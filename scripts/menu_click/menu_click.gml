@@ -252,7 +252,7 @@ function menu_click(argument0) {
 	    }
 	    case "schexport_format": {
 	        sch_exp_format = sel
-	        structure = (sch_exp_format <= 1)
+	        structure = (sch_exp_format <= 1 || sch_exp_format = 4)
 	        sch_exp_minecraft_old = (sch_exp_format = 3)
 	        break
 	    }

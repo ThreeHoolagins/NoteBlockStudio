@@ -2,7 +2,7 @@ function track_export() {
 	// track_export()
 	var fn, a, b, c, d, p, xx, yy, zz, len, wid, hei, o, chestx, chesty, chestz, signx, signy, signz, nblocks, layers, cyy, y1, x1, insnum, ins, repeats, remain, replen, blockamount, nbamount, cpan, cpanvol, cvol, blocktagpos, sizepos, channels, row_index, row, track_tick_delay;
 	var REPEATER, TORCHON, TORCHOFF, WIRE, LADDER, RAIL, POWEREDRAIL, SLAB, noteblocks, noteblockx, noteblocky, noteblockz, noteblocknote, noteblockins, noteblockpit, command_plan, export_end;
-	structure = (sch_exp_format <= 1)
+	structure = (sch_exp_format <= 1 || sch_exp_format = 4)
 	sch_exp_minecraft_old = (sch_exp_format = 3)
 	if (structure) fn = string(get_save_filename_ext("Minecraft Structures (*.nbt)|*.nbt", filename_new_ext(string_replace_all(string_lower(songs[song].filename), " ", "_"), "") + ".nbt", "", "Export Track"))
 	else fn = string(get_save_filename_ext("Minecraft Schematics (*.schematic)|*.schematic", filename_new_ext(songs[song].filename, "") + ".schematic", "", "Export Track"))
@@ -1295,7 +1295,7 @@ function track_export() {
 			TAG_End()
 			blockamount = totalblocksc
 			buffer_seek(buffer, buffer_seek_start, sizepos)
-			if (o.sch_exp_format = 1) {
+			if (o.sch_exp_format = 1 || o.sch_exp_format = 4) {
 				buffer_write_int_be(structure_max_x + 1)
 				buffer_write_int_be(structure_max_y + 1)
 				buffer_write_int_be(structure_max_z + 1)
