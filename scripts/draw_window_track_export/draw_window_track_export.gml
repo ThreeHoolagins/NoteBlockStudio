@@ -99,7 +99,7 @@ function draw_window_track_export() {
 	    draw_text_dynamic(x1 + 16, y1 + 220, "Layout:")
 	    draw_radiobox(x1 + 32, y1 + 240, sch_exp_layout = 1, "Simple walkway", "Generate a simple walkway that stretches\nas far as the length of the song.", 1)
 	    draw_text_dynamic(x1 + 16, y1 + 280, "Format:")
-		formatstr = condstr(sch_exp_format = 0, ".nbt (Structure Block)") + condstr(sch_exp_format = 1, ".nbt (Litematica)") + condstr(sch_exp_format = 2, ".schematic (1.11-1.12)") + condstr(sch_exp_format = 3, ".schematic (pre 1.11)")
+		formatstr = condstr(sch_exp_format = 0, ".nbt (Structure Block)") + condstr(sch_exp_format = 1 || sch_exp_format = 4, ".nbt (Litematica)") + condstr(sch_exp_format = 2, ".schematic (1.11-1.12)") + condstr(sch_exp_format = 3, ".schematic (pre 1.11)")
 		draw_area(x1 + 16, y1 + 298, x1 + 166, y1 + 319)
 		if ((draw_abutton(x1 + 148, y1 + 300) || (mouse_rectangle(x1 + 16, y1 + 298, 150, 21) && nbs_mouse_check_button_pressed(mb_left))) && wmenu = 0) {
 			formatmenu = check(sch_exp_format = 0) + ".nbt (Structure Block)|" + check(sch_exp_format = 1) + ".nbt (Litematica)|" + check(sch_exp_format = 2) + ".schematic (1.11-1.12)|" + check(sch_exp_format = 3) + ".schematic (pre 1.11)"
@@ -135,7 +135,7 @@ function draw_window_track_export() {
 	    draw_text_dynamic(x1 + 16, y1 + 220, "分布:")
 	    draw_radiobox(x1 + 32, y1 + 240, 1, "普通过道", "生成过道延伸到歌曲末尾。", 1)
 	    draw_text_dynamic(x1 + 16, y1 + 280, "格式:")
-		formatstr = condstr(sch_exp_format = 0, ".nbt (结构方块)") + condstr(sch_exp_format = 1, ".nbt (Litematica)") + condstr(sch_exp_format = 2, ".schematic (1.11-1.12)") + condstr(sch_exp_format = 3, ".schematic (pre 1.11)")
+		formatstr = condstr(sch_exp_format = 0, ".nbt (结构方块)") + condstr(sch_exp_format = 1 || sch_exp_format = 4, ".nbt (Litematica)") + condstr(sch_exp_format = 2, ".schematic (1.11-1.12)") + condstr(sch_exp_format = 3, ".schematic (pre 1.11)")
 		draw_area(x1 + 16, y1 + 298, x1 + 166, y1 + 319)
 		if ((draw_abutton(x1 + 148, y1 + 300) || (mouse_rectangle(x1 + 16, y1 + 298, 150, 21) && nbs_mouse_check_button_pressed(mb_left))) && wmenu = 0) {
 			formatmenu = check(sch_exp_format = 0) + ".nbt (结构方块)|" + check(sch_exp_format = 1) + ".nbt (Litematica)|" + check(sch_exp_format = 2) + ".schematic (1.11-1.12)|" + check(sch_exp_format = 3) + ".schematic (pre 1.11)"
